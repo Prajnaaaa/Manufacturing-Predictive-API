@@ -1,0 +1,16 @@
+import pandas as pd
+import random
+
+# Generate synthetic manufacturing data
+data = {
+    "Machine_ID": [f"M{i}" for i in range(1, 101)],
+    "Temperature": [random.randint(60, 100) for _ in range(100)],
+    "Run_Time": [random.randint(50, 200) for _ in range(100)],
+    "Downtime_Flag": [random.choice([0, 1]) for _ in range(100)]
+}
+
+df = pd.DataFrame(data)
+
+# Save to a CSV file
+df.to_csv("data/manufacturing_data.csv", index=False)
+print("Synthetic dataset created and saved to 'data/manufacturing_data.csv'")
